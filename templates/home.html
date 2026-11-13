@@ -1,0 +1,113 @@
+
+{% extends 'base.html' %}
+
+{% block title %}PDF Tools - Home{% endblock %}
+
+{% block content %}
+
+<section class="hero-section">
+
+    <div class="container text-center">
+
+        <span class="hero-badge">
+            Simple Online PDF Tools
+        </span>
+
+        <h1 class="hero-title mt-4">
+            All Your PDF Tools
+            <span>In One Place</span>
+        </h1>
+
+        <p class="hero-description">
+            Convert images, remove text watermarks,
+            and transform PDF files into Word documents.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="container tools-section">
+
+    <div class="row g-4">
+
+        <div class="col-md-4">
+
+            <div class="tool-card">
+
+                <div class="tool-icon purple">
+                    <span>🖼️</span>
+                </div>
+
+                <h4>Images to PDF</h4>
+
+                <p>
+                    Convert multiple images into
+                    a single PDF document.
+                </p>
+
+                <a href="{% url 'image_to_pdf' %}"
+                   class="btn btn-primary w-100">
+                    Start Converting
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+
+            <div class="tool-card">
+
+                <div class="tool-icon orange">
+                    <span>✂️</span>
+                </div>
+
+                <h4>Remove Watermark</h4>
+
+                <p>
+                    Remove matching text watermarks
+                    from PDF documents you can edit.
+                </p>
+
+                <a href="{% url 'watermark_remover' %}"
+                   class="btn btn-primary w-100">
+                    Remove Watermark
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+
+            <div class="tool-card">
+
+                <div class="tool-icon green">
+                    <span>📝</span>
+                </div>
+
+                <h4>PDF to Word</h4>
+
+                <p>
+                    Convert PDF documents into
+                    editable Word files.
+                </p>
+
+                <a href="{% url 'pdf_to_word' %}"
+                   class="btn btn-primary w-100">
+                    Convert to Word
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,315 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #f8f9fc;
+    color: #25253b;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+.brand-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: #6855df;
+    color: white;
+    margin-right: 8px;
+}
+
+.navbar {
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    font-size: 22px;
+}
+
+.nav-link {
+    margin-left: 12px;
+    color: #555 !important;
+}
+
+.hero-section {
+    padding: 90px 15px 65px;
+    background: linear-gradient(
+        135deg,
+        #f0edff,
+        #ffffff
+    );
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 8px 18px;
+    background: #e6e1ff;
+    color: #6855df;
+    border-radius: 30px;
+    font-size: 13px;
+}
+
+.hero-title {
+    font-size: clamp(35px, 5vw, 58px);
+    font-weight: 800;
+}
+
+.hero-title span {
+    display: block;
+    color: #6855df;
+}
+
+.hero-description {
+    max-width: 620px;
+    margin: 20px auto;
+    color: #777;
+    line-height: 1.8;
+}
+
+.tools-section {
+    padding-top: 40px;
+    padding-bottom: 50px;
+}
+
+.tool-card {
+    height: 100%;
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid #eee;
+    box-shadow: 0 8px 25px rgba(0,0,0,.035);
+    transition: .25s;
+}
+
+.tool-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.08);
+}
+
+.tool-card h4 {
+    font-weight: 700;
+    margin: 20px 0 12px;
+}
+
+.tool-card p {
+    color: #777;
+    min-height: 55px;
+    line-height: 1.7;
+}
+
+.tool-icon {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    font-size: 28px;
+}
+
+.purple {
+    background: #eeeaff;
+}
+
+.orange {
+    background: #fff0e3;
+}
+
+.green {
+    background: #e4f8ed;
+}
+
+.btn-primary {
+    background: #6855df;
+    border-color: #6855df;
+}
+
+.btn-primary:hover {
+    background: #5541ca;
+    border-color: #5541ca;
+}
+
+.tool-page {
+    max-width: 850px;
+    padding-top: 70px;
+    padding-bottom: 40px;
+}
+
+.tool-page h1 {
+    font-weight: 800;
+}
+
+.upload-card {
+    background: white;
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 10px 35px rgba(0,0,0,.05);
+    border: 1px solid #eee;
+}
+
+.upload-area {
+    padding: 45px 20px;
+    border: 2px dashed #c8c2ef;
+    border-radius: 15px;
+    text-align: center;
+    background: #faf9ff;
+    transition: .2s;
+}
+
+.upload-area.dragover {
+    background: #eeeaff;
+    border-color: #6855df;
+}
+
+.upload-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.upload-area h5 {
+    font-weight: 700;
+}
+
+.success-box {
+    padding: 25px 10px;
+}
+
+.success-icon {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: #e0f7e9;
+    color: #198754;
+    font-size: 35px;
+}
+
+.success-box h3 {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.success-box .btn {
+    margin: 7px;
+}
+
+.file-item {
+    background: #f5f5fa;
+    padding: 12px 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.file-actions button {
+    margin-left: 4px;
+}
+
+.footer {
+    background: white;
+    border-top: 1px solid #eee;
+    padding: 25px 0;
+    color: #888;
+}
+
+@media (max-width: 768px) {
+
+    .hero-section {
+        padding-top: 60px;
+    }
+
+    .upload-card {
+        padding: 20px;
+    }
+
+    .tool-card {
+        padding: 25px;
+    }
+
+}
+
+
+/* Watermark removal method cards */
+
+.method-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+    padding: 20px;
+    background: #faf9ff;
+    border: 1px solid #e5e1f5;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.method-card:hover {
+    border-color: #6855df;
+    background: #f3f0ff;
+}
+
+.method-card input {
+    accent-color: #6855df;
+    width: 17px;
+    height: 17px;
+}
+
+.method-card strong {
+    font-size: 16px;
+}
+
+.method-card small {
+    color: #777;
+    line-height: 1.6;
+}
+
+
+/* PDF preview */
+
+.pdf-page-wrapper {
+    position: relative !important;
+    display: block;
+    margin: 0 auto 25px;
+    background: white;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, .12);
+    line-height: 0;
+    overflow: hidden;
+}
+
+.pdf-page-wrapper canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+}
+
+.pdf-selection-overlay {
+    position: absolute !important;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    cursor: crosshair;
+    pointer-events: auto !important;
+    touch-action: none;
+}
+
+.selected-watermark-area {
+    position: absolute;
+    z-index: 101;
+    border: 2px solid #6855df;
+    background: rgba(104, 85, 223, .35);
+    pointer-events: none;
+    box-sizing: border-box;
+}

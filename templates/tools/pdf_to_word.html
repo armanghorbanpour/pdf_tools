@@ -1,0 +1,84 @@
+
+{% extends 'base.html' %}
+
+{% block title %}PDF to Word{% endblock %}
+
+{% block content %}
+
+<div class="container tool-page">
+
+    <div class="text-center mb-5">
+
+        <h1>Convert PDF to Word</h1>
+
+        <p class="text-muted">
+            Convert your PDF document into an editable DOCX file.
+        </p>
+
+    </div>
+
+
+    <div class="upload-card">
+
+        {% if output_file %}
+
+            <div class="text-center success-box">
+
+                <div class="success-icon">✓</div>
+
+                <h3>Conversion Completed!</h3>
+
+                <p>Your Word document is ready.</p>
+
+                <a href="{% url 'download_file' output_file %}"
+                   class="btn btn-success">
+                    Download Word File
+                </a>
+
+                <a href="{% url 'pdf_to_word' %}"
+                   class="btn btn-outline-primary">
+                    Convert Another File
+                </a>
+
+            </div>
+
+        {% else %}
+
+            <form method="POST"
+                  enctype="multipart/form-data">
+
+                {% csrf_token %}
+
+                <div class="upload-area">
+
+                    <div class="upload-icon">📄</div>
+
+                    <h5>Select your PDF file</h5>
+
+                    <input type="file"
+                           name="pdf_file"
+                           class="form-control mt-4"
+                           accept="application/pdf,.pdf"
+                           required>
+
+                    <small class="d-block mt-3 text-muted">
+                        Maximum file size: 25 MB
+                    </small>
+
+                </div>
+
+
+                <button type="submit"
+                        class="btn btn-primary w-100 mt-4">
+                    Convert to Word
+                </button>
+
+            </form>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}

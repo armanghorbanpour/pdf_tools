@@ -1,0 +1,172 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Remove PDF Watermark{% endblock %}
+
+{% block content %}
+
+<div class="container tool-page">
+
+    <div class="text-center mb-5">
+
+        <h1>Remove PDF Watermark</h1>
+
+        <p class="text-muted">
+            Remove text or graphical watermarks from your PDF.
+        </p>
+
+    </div>
+
+    <div class="upload-card">
+
+        {% if output_file %}
+
+            <div class="text-center success-box">
+
+                <div class="success-icon">✓</div>
+
+                <h3>Processing Completed!</h3>
+
+                <p>Your edited PDF is ready.</p>
+
+                <a href="{% url 'download_file' output_file %}"
+                   class="btn btn-success">
+                    Download PDF
+                </a>
+
+                <a href="{% url 'watermark_remover' %}"
+                   class="btn btn-outline-primary">
+                    Process Another PDF
+                </a>
+
+            </div>
+
+        {% else %}
+
+            <form method="POST"
+                  enctype="multipart/form-data"
+                  id="watermarkForm">
+
+                {% csrf_token %}
+
+                <label class="form-label fw-bold">
+                    Select PDF File
+                </label>
+
+                <input type="file"
+                       name="pdf_file"
+                       id="watermarkPdf"
+                       class="form-control mb-4"
+                       accept="application/pdf,.pdf"
+                       required>
+
+
+                <div class="mb-4">
+
+                    <label class="form-label fw-bold">
+                        Removal Method
+                    </label>
+
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+
+                            <label class="method-card">
+
+                                <input type="radio"
+                                       name="mode"
+                                       value="text"
+                                       checked>
+
+                                <strong>Text Search</strong>
+
+                                <small>
+                                    Find and remove searchable text.
+                                </small>
+
+                            </label>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label class="method-card">
+
+                                <input type="radio"
+                                       name="mode"
+                                       value="area">
+
+                                <strong>Select Area</strong>
+
+                                <small>
+                                    Select watermark location manually.
+                                </small>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div id="textMode">
+
+                    <label class="form-label fw-bold">
+                        Watermark Text
+                    </label>
+
+                    <input type="text"
+                           name="watermark_text"
+                           class="form-control"
+                           maxlength="200"
+                           placeholder="Enter exact watermark text">
+
+                </div>
+
+
+                <div id="areaMode" style="display:none;">
+
+                    <div class="alert alert-info">
+                        Select the watermark area on each PDF page
+                        by dragging your mouse over it.
+                    </div>
+
+                    <div id="pdfPreview"
+                         class="pdf-preview"></div>
+
+                    <input type="hidden"
+                           name="areas_json"
+                           id="areasJson">
+
+                    <p class="text-muted small mt-3">
+                        Selected areas will be covered with white
+                        and overlapping vector graphics will be removed.
+                    </p>
+
+                </div>
+
+
+                <button type="submit"
+                        class="btn btn-primary w-100 mt-4"
+                        id="watermarkSubmit">
+
+                    Remove Watermark
+
+                </button>
+
+            </form>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+{% block extra_scripts %}
+{% endblock %}
